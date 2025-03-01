@@ -1,0 +1,86 @@
+<div class="container mt-4">
+  <h2 class="text-center">Employee Management</h2>
+
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-6">
+
+        <div class="mb-3">
+          <label class="form-label">Username</label>
+          <input type="text" class="form-control" formControlName="username" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Mobile Number</label>
+          <input type="text" class="form-control" formControlName="mobilenumber" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" formControlName="gmail" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Aadhar Number</label>
+          <input type="text" class="form-control" formControlName="adharnumber" />
+        </div>
+
+      </div>
+
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label class="form-label">College Name</label>
+          <input type="text" class="form-control" formControlName="collegename" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Branch</label>
+          <select class="form-control" formControlName="branch">
+            <option value="" disabled>Select Branch</option>
+            <option *ngFor="let branch of branchOptions" [value]="branch">{{ branch }}</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Passed Out Year</label>
+          <input type="text" class="form-control" formControlName="passedoutyear" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Hall Ticket Number</label>
+          <input type="text" class="form-control" formControlName="hallticketnumber" />
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">{{ isEdit ? 'Update' : 'Add' }}</button>
+    <button type="button" class="btn btn-secondary ms-2" (click)="resetForm()">Reset</button>
+  </form>
+
+  <hr />
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>College</th>
+        <th>Branch</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees">
+        <td>{{ emp.username }}</td>
+        <td>{{ emp.mobilenumber }}</td>
+        <td>{{ emp.gmail }}</td>
+        <td>{{ emp.collegename }}</td>
+        <td>{{ emp.branch }}</td>
+        <td>
+          <button class="btn btn-warning btn-sm" (click)="editEmployee(emp)">Edit</button>
+          <button class="btn btn-danger btn-sm ms-2" (click)="deleteEmployee(emp.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

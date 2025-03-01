@@ -1,0 +1,27 @@
+{
+  "users": [],
+  "employee": [
+    {
+      "id": "1ed2",
+      "username": "pandu",
+      "mobilenumber": "324324322",
+      "gmail": "pandu@gmail.com",
+      "adharnumber": "3424234",
+      "collegename": "bits",
+      "branch": "eee",
+      "passedoutyear": "2017",
+      "hallticketnumber": "434324324"
+    },
+    {
+      "username": "madhu",
+      "mobilenumber": "432434797",
+      "gmail": "madhu@gmail.com",
+      "adharnumber": "4324269486",
+      "collegename": "vmr",
+      "branch": "eee",
+      "passedoutyear": "2017",
+      "hallticketnumber": "435345435",
+      "id": "ebce"
+    }
+  ]
+}
